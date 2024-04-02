@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="card_form_title_image" tools:ignore="ExtraTranslation" tools:override="true">Inserta tu tarjeta de crédito/débito</string>
+    <string name="card_complete_button" tools:ignore="ExtraTranslation" tools:override="true">Guardar</string>
+    <string name="card_secure_payment_text">Powered by Yuno</string>
+    <string name="payment.form_phone_error" tools:ignore="ExtraTranslation">Número de teléfono inválido</string>
+</resources>

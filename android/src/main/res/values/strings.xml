@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="gateway_loading">Cargando pasarela activa... intente de nuevo</string>
+    <string name="card_form_title_image">Inserta tu tarjeta de crédito/débito</string>
+    <string name="card_secure_payment_text">Powered by Yuno</string>
+    <string name="payment.form_phone_error" tools:ignore="ExtraTranslation">Número de teléfono inválido</string>
+</resources>

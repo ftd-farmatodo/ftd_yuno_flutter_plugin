@@ -1,0 +1,9 @@
+/* 
+  YunoLocalizables.strings
+  app
+
+  Created by Edbin on 26/12/23.
+  Copyright © 2023 Farmatodo Col. All rights reserved.
+*/
+"creditCardFormPayNow" = "Guardar";
+"creditCardFormViewShortTitle" = "Inserta tu tarjeta de crédito/débito";
