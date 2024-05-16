@@ -43,7 +43,7 @@ class YunoFlutterPlugin : FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
     private lateinit var channel: MethodChannel
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "yuno_flutter_plugin")
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "yuno")
         channel.setMethodCallHandler(this)
         this.context = flutterPluginBinding.applicationContext
     }
@@ -73,6 +73,7 @@ class YunoFlutterPlugin : FlutterPlugin, MethodCallHandler, ActivityAware, Plugi
         _result = result
         when(call.method) {
             "init" -> {
+                Log.i("YUNOSDK:", "init");
                 val key = call.argument("key") ?: ""
                 Yuno.initialize(
                     this.context,
