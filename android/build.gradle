@@ -50,6 +50,6 @@ android {
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.yuno.payments:android-sdk:1.5.14'
+    implementation 'com.yuno.payments:android-sdk:1.11.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
 }
