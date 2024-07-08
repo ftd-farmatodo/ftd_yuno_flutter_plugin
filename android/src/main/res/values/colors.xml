@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="neutral_b">#418FDE</color>
+    <color name="grey_4">#92959B</color>
+    <color name="ftdblue">#418FDE</color>
+    <color name="on_focus_outlined_text_view">#418FDE</color>
+    <style name="Button.Normal.NeutralB">
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:textColor">@drawable/button_text_color</item>
+    </style>
 </resources>
