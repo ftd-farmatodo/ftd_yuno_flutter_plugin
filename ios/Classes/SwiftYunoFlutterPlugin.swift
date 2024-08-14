@@ -15,7 +15,7 @@ public class SwiftYunoFlutterPlugin: NSObject, FlutterPlugin {
         switch call.method {
         case "init":
             if rootViewController == nil {
-                rootViewController = UIApplication.shared.keyWindow?.rootViewController
+                rootViewController = UIApplication.shared.windows.first?.rootViewController
             }
             let path = Bundle.main.path(forResource: "es", ofType: "lproj") ?? ""
             let bundle = Bundle(path: path)
@@ -46,10 +46,10 @@ public class SwiftYunoFlutterPlugin: NSObject, FlutterPlugin {
                     viewToPush.countryCode = country
                     viewToPush.action = action
                     viewToPush.result = result
-                    UIApplication.shared.keyWindow?.rootViewController = nil
-                    let navigationController = UINavigationController(rootViewController: (self.rootViewController)!)
-                    UIApplication.shared.keyWindow?.makeKeyAndVisible()
-                    UIApplication.shared.keyWindow?.rootViewController = navigationController
+                    UIApplication.shared.windows.first?.rootViewController = nil
+                    let navigationController = UINavigationController(rootViewController: (self.rootViewController))
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                    UIApplication.shared.windows.first?.rootViewController = navigationController
                     navigationController.isNavigationBarHidden = true
                     navigationController.pushViewController(viewToPush, animated: false)
                 })
