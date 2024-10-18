@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'yuno_flutter_plugin'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Plugin for accessing the yuno sdk'
   s.description      = <<-DESC
 Flutter plugin project for Yuno SDK.
