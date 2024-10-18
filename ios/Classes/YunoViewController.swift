@@ -1,6 +1,10 @@
 import UIKit
 import YunoSDK
 
+enum PaymentMethodType: String { 
+    case card = "CARD"
+}
+
 class YunoViewController: UIViewController {
 
     var checkoutSession: String = ""
@@ -8,7 +12,7 @@ class YunoViewController: UIViewController {
     var language: String? = "es"
     var action: String = ""
     var ott: String = ""
-    var result: FlutterResult? = nil
+    var result: FlutterResult?
     private var close: Bool = true
     
     override func viewDidLoad() {
@@ -21,7 +25,8 @@ class YunoViewController: UIViewController {
         Yuno.startCheckout(with: self)
         if action == YunoMethodAction.start.rawValue {
             let paymentSelected = PaymentMethodYuno(
-                vaultedToken: nil, paymentMethodType: "CARD"
+                vaultedToken: nil,
+                paymentMethodType: PaymentMethodType.card.rawValue
             )
             Yuno.startPaymentLite(paymentSelected: paymentSelected)
         } else {

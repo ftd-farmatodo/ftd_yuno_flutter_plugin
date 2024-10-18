@@ -2,7 +2,7 @@ import Flutter
 import YunoSDK
 
  public enum YunoMethodAction: String {
-    case ´init´ = "init"
+    case `init` = "init"
     case start = "start"
     case continuePayment = "continuePayment"
 }
@@ -21,14 +21,14 @@ public class SwiftYunoFlutterPlugin: NSObject, FlutterPlugin {
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
-        case YunoMethodAction.´init´.rawValue:
+        case YunoMethodAction.`init`.rawValue:
 
             if rootViewController == nil {
                 rootViewController = UIApplication.shared.windows.first?.rootViewController
             }
 
             let bundle = Bundle(path: path)
-            if let args = call.arguments as? Dictionary<String, Any>,
+            if let args = call.arguments as? [String: Any],
                let key = args["key"] as? String,
                let checkoutSession = args["checkoutSession"] as? String,
                let country = args["country"] as? String,
@@ -37,21 +37,21 @@ public class SwiftYunoFlutterPlugin: NSObject, FlutterPlugin {
                 Yuno.initialize(apiKey: key,
                     config: YunoConfig(
                         cardFormType: CardFormType.oneStep,
-                        appearance: getApparenceUI(),
+                        appearance: getAppearanceUI(),
                         saveCardEnabled: false,
                         localizableBundle: bundle
                     )
                 )
 
                 let viewToPush = YunoViewController()
+                UIApplication.shared.windows.first?.rootViewController = nil
                 viewToPush.checkoutSession = checkoutSession
                 viewToPush.countryCode = country
                 viewToPush.action = action
                 viewToPush.result = result
-                UIApplication.shared.windows.first?.rootViewController = nil
 
                 UIView.animate(withDuration: 0.9, animations: {
-                    let navigationController = UINavigationController(rootViewController: (self.rootViewController))
+                    let navigationController = UINavigationController(rootViewController: self.rootViewController)
                     UIApplication.shared.windows.first?.rootViewController = navigationController
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                     navigationController.isNavigationBarHidden = true
@@ -66,7 +66,7 @@ public class SwiftYunoFlutterPlugin: NSObject, FlutterPlugin {
     }
 
     // MARK: - Private Methods
-    private func getApparenceUI() -> Yuno.Appearance {
+    private func getAppearanceUI() -> Yuno.Appearance {
         return Yuno.Appearance(
             accentColor: .accentA,
             buttonBackgroundColor: UIColor(red: 0.29, green: 0.56, blue: 0.89, alpha: 1.00),

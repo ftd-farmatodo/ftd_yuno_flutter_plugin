@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - yuno_flutter_plugin (0.0.1):
+  - yuno_flutter_plugin (0.0.2):
     - Flutter
     - YunoSDK (= 1.13.0)
   - YunoSDK (1.13.0)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
-  yuno_flutter_plugin: b29486d88d7f52fd28c63951f5d531e94ef63a13
+  yuno_flutter_plugin: fc34bbd9bd5b4801b8a61a96004b31ef2b3dd751
   YunoSDK: a5b04912d342e106f53de1f8cedf14f20c0fa0ad
 
 PODFILE CHECKSUM: 351dbda8241c6ae667acbc7bc0353a0d9978d7f1
