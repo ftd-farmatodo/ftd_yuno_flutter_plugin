@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'yuno_flutter_plugin'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Plugin for accessing the yuno sdk'
   s.description      = <<-DESC
 Flutter plugin project for Yuno SDK.
@@ -20,13 +20,6 @@ Flutter plugin project for Yuno SDK.
   s.platform = :ios, '13.0'
   s.ios.deployment_target = '13.0'
   s.requires_arc = true
-  s.resource_bundles = {
-      'Resources' => [
-          'YunoSDK.xcframework/Assets/**/*.xcassets',
-          'YunoSDK.xcframework/Assets/Localization/*.lproj',
-          'YunoSDK.xcframework/Assets/**/*.{storyboard,xib,json,ttf}'
-      ]
-  }
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => ['${PODS_XCFRAMEWORKS_BUILD_DIR}/YunoSDK'] }
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 

@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - yuno_flutter_plugin (0.0.2):
+  - yuno_flutter_plugin (0.0.3):
     - Flutter
     - YunoSDK (= 1.13.0)
   - YunoSDK (1.13.0)
